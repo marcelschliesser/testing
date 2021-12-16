@@ -1,2 +1,2 @@
 /application/
-.terraform/
+/infrastructure/.terraform/
