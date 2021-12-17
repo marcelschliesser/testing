@@ -31,20 +31,16 @@ jobs:
           github-token: ${{ steps.auth.outputs.access_token }}
       
       - name: Terraform Init
-        working-directory: ./infrastructure
-        run: terraform init
+        run: terraform init infrastructure
 
       - name: Terraform Validate
-        working-directory: ./infrastructure
-        run: terraform validate -no-color
+        run: terraform validate -no-color infrastructure
 
       - name: Terraform Plan
-        working-directory: ./infrastructure
-        run: terraform plan -no-color
+        run: terraform plan -no-color infrastructure
 
       - name: Terraform Apply
-        working-directory: ./infrastructure
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve infrastructure
 
   
   Log:
