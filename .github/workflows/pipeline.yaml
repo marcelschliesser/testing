@@ -21,7 +21,6 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
           token_format: 'access_token'
-          create_credentials_file: true
           workload_identity_provider: 'projects/498248676648/locations/global/workloadIdentityPools/github-pool/providers/github-action-provider'
           service_account: 'terraform@pagespeed-insights-logger.iam.gserviceaccount.com'
 
