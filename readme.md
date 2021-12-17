@@ -1,6 +1,7 @@
 A Core Web Vitals Logger which logs the cwv in a cloud run service to big query for give hosts peridoically
 
 ## Setting up Identity Federation for GitHub Actions
+https://github.com/google-github-actions/auth#setup
 ```
 set gcp_project_id=pagespeed-insights-logger
 
