@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Authenticate to Google Cloud'
+      - id: auth
+        name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
         with:
           token_format: 'access_token'
@@ -25,7 +26,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
+          access_token: ${{ steps.auth.outputs.access_token }}
       
       - name: Terraform Init
         working-directory: ./infrastructure
