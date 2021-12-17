@@ -1,5 +1,5 @@
 resource "google_cloud_run_service" "default" {
-  name     = "cloudrun-srv"
+  name     = "cwv-logger"
   location = var.location
 
   template {
