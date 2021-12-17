@@ -8,6 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          token_format: 'access_token'
+          workload_identity_provider: 'projects/498248676648/locations/global/workloadIdentityPools/github-pool/providers/github-action-provider'
+          service_account: 'terraform@pagespeed-insights-logger.iam.gserviceaccount.com'
+
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -17,8 +24,6 @@ jobs:
       - name: Terraform Init
         working-directory: ./infrastructure
         run: terraform init
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Terraform Validate
         working-directory: ./infrastructure
@@ -27,14 +32,10 @@ jobs:
       - name: Terraform Plan
         working-directory: ./infrastructure
         run: terraform plan -no-color
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Terraform Apply
         working-directory: ./infrastructure
         run: terraform apply -auto-approve
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
   
   Log:
