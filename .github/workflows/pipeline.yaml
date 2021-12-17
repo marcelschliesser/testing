@@ -31,7 +31,7 @@ jobs:
           gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
 
           # Now you can run gcloud commands authenticated as the impersonated service account.
-          gcloud secrets versions access "latest" --secret "my-secret"
+          gcloud info
 
       - name: Checkout
         uses: actions/checkout@v2
