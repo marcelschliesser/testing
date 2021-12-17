@@ -25,7 +25,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          access_token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Terraform Init
         working-directory: ./infrastructure
