@@ -36,6 +36,8 @@ jobs:
       - name: Terraform Plan
         working-directory: ./infrastructure
         run: terraform plan -no-color
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Terraform Apply
         working-directory: ./infrastructure
