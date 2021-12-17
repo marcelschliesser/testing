@@ -5,6 +5,8 @@ https://github.com/google-github-actions/auth#setup
 ```
 set gcp_project_id=pagespeed-insights-logger
 
+gcloud services enable iamcredentials.googleapis.com
+
 gcloud iam workload-identity-pools create "github-pool" --project=%gcp_project_id% --location="global" --display-name="Pool for Github Actions"
 
 gcloud iam workload-identity-pools providers create-oidc "github-action-provider" --project=%gcp_project_id% --location="global" --workload-identity-pool="github-pool" --display-name="Github Action Provider" --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.aud=assertion.aud" --issuer-uri="https://token.actions.githubusercontent.com"
