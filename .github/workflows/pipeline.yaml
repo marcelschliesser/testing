@@ -21,6 +21,7 @@ jobs:
           create_credentials_file: true
           workload_identity_provider: 'projects/498248676648/locations/global/workloadIdentityPools/github-pool/providers/github-action-provider'
           service_account: 'terraform@pagespeed-insights-logger.iam.gserviceaccount.com'
+        run: ls ${{ steps.auth.outputs.credentials_file_path }}
 
       - name: Checkout
         uses: actions/checkout@v2
