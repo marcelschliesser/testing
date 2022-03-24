@@ -28,7 +28,7 @@ set gcp_project_name=PageSpeed Insights Logger
 
 gcloud projects create %gcp_project_id% --name="%gcp_project_name%"
 ```
-
+d
 ```mermaid
   graph TD;
       A-->B;
