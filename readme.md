@@ -28,20 +28,21 @@ set gcp_project_name=PageSpeed Insights Logger
 
 gcloud projects create %gcp_project_id% --name="%gcp_project_name%"
 ```
-d
+
+## Mermaid Tests
 ```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
-https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
-```mermaid
-classDiagram
-    class BankAccount
-    BankAccount : +String owner
-    BankAccount : +Bigdecimal balance
-    BankAccount : +deposit(amount)
-    BankAccount : +withdrawl(amount)
+flowchart LR
+  subgraph TOP
+    direction TB
+    subgraph B1
+        direction RL
+        i1 -->f1
+    end
+    subgraph B2
+        direction BT
+        i2 -->f2
+    end
+  end
+  A --> TOP --> B
+  B1 --> B2
 ```
