@@ -32,7 +32,7 @@ gcloud projects create %gcp_project_id% --name="%gcp_project_name%"
 ## Mermaid Tests
 ```mermaid
 flowchart LR
-  subgraph TOP
+  subgraph TEST
     direction TB
     subgraph B1
         direction RL
