@@ -21,7 +21,7 @@ docs: https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/run
 Enable and resrict the api key manually
 https://medium.com/interleap/automating-terraform-deployment-to-google-cloud-with-github-actions-17516c4fb2e5
 
-## set up
+## set up.
 ```
 set gcp_project_id=pagespeed-insights-logger
 set gcp_project_name=PageSpeed Insights Logger
