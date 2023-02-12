@@ -29,20 +29,7 @@ set gcp_project_name=PageSpeed Insights Logger
 gcloud projects create %gcp_project_id% --name="%gcp_project_name%"
 ```
 
-## Mermaid Tests
-```mermaid
-flowchart LR
-  subgraph TEST
-    direction TB
-    subgraph B1
-        direction RL
-        i1 -->f1
-    end
-    subgraph B2
-        direction BT
-        i2 -->f2
-    end
-  end
-  A --> TOP --> B
-  B1 --> B2
-```
+## Pre-commit use Python Black Formatter
+https://github.com/psf/black
+https://black.readthedocs.io/en/stable/integrations/source_version_control.html
+https://pre-commit.com/#install
